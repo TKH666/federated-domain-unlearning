@@ -186,7 +186,3 @@ Parts of this repository are adapted from the following implementations. CP (`fd
 ## License
 
 This code is released under the MIT License (see `LICENSE`). The adapted third-party code listed above keeps the license of its origin.
-
-## Citation
-
-[to be added by the authors]
