@@ -1,0 +1,10 @@
+# tested with torch 1.13.1+cu116 / torchvision 0.14.1 (Python 3.8), torch 2.7.1+cu126 (Python 3.10),
+# torch 2.9.1+cu128 / torchvision 0.24.1 (Python 3.10)
+torch>=1.13
+torchvision>=0.14
+numpy
+scipy
+scikit-learn
+Pillow
+matplotlib
+# optional: pynndescent (FPL clustering of very large prototype sets; not needed for these datasets)

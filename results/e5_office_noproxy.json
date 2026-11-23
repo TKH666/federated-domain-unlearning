@@ -1,0 +1,182 @@
+[
+ {
+  "variant": "final",
+  "target": "amazon",
+  "tag": "ref_fl_r10-20_sh_eps0.1_b20.0_auto5_mspec20_warm_kb_h8888",
+  "orig": 96.27507163323783,
+  "retrain": 0.28653295128939826,
+  "hold": 0.28653295128939826,
+  "sec": 8843.900805111043,
+  "epochs": 400,
+  "reached": true,
+  "anchor": 9,
+  "rho_acc": 0.6610936529170212,
+  "n": 9,
+  "agree_acc": [
+   3,
+   7
+  ],
+  "rho_cka": 0.912141875543738,
+  "agree_cka": [
+   6,
+   7
+  ]
+ },
+ {
+  "variant": "final",
+  "target": "caltech",
+  "tag": "ref_fl_r10-20_sh_eps0.3_b20.0_auto5_mspec20_warm_kb_h8888",
+  "orig": 86.01895734597156,
+  "retrain": 0.0,
+  "hold": 0.47393364928909953,
+  "sec": 6251.946633595973,
+  "epochs": 180,
+  "reached": true,
+  "anchor": 9,
+  "rho_acc": 0.7615129419677079,
+  "n": 9,
+  "agree_acc": [
+   6,
+   7
+  ],
+  "rho_cka": 0.7615129419677079,
+  "agree_cka": [
+   7,
+   7
+  ]
+ },
+ {
+  "variant": "final",
+  "target": "dslr",
+  "tag": "ref_fl_r10-20_sh_eps0.1_b20.0_auto5_mspec20_h8888",
+  "orig": 98.03921568627452,
+  "retrain": 23.529411764705884,
+  "hold": 1.9607843137254901,
+  "sec": 11745.598320629448,
+  "epochs": 560,
+  "reached": true,
+  "anchor": 9,
+  "rho_acc": 0.4426533959945493,
+  "n": 9,
+  "agree_acc": [
+   4,
+   7
+  ],
+  "rho_cka": 0.8833333333333333,
+  "agree_cka": [
+   6,
+   7
+  ]
+ },
+ {
+  "variant": "final",
+  "target": "webcam",
+  "tag": "ref_fl_r10-20_sh_eps0.1_b20.0_auto5_mspec20_h8888",
+  "orig": 97.05882352941177,
+  "retrain": 13.72549019607843,
+  "hold": 0.9803921568627451,
+  "sec": 5261.682018660009,
+  "epochs": 560,
+  "reached": true,
+  "anchor": 9,
+  "rho_acc": 0.6033808985702448,
+  "n": 9,
+  "agree_acc": [
+   3,
+   7
+  ],
+  "rho_cka": 0.8033543124054942,
+  "agree_cka": [
+   4,
+   7
+  ]
+ },
+ {
+  "variant": "no-proxy (clean acc.)",
+  "target": "amazon",
+  "tag": "ref_fl_r10-20_sh_eps0.1_b20.0_auto5_mspec20_warm_kb_h8888",
+  "orig": 86.53295128939828,
+  "retrain": 50.429799426934096,
+  "hold": 46.99140401146132,
+  "sec": 0.0,
+  "epochs": 0,
+  "reached": null,
+  "rho_acc": 0.8666666666666667,
+  "n": 9,
+  "agree_acc": [
+   6,
+   7
+  ],
+  "rho_cka": 0.8333333333333333,
+  "agree_cka": [
+   5,
+   7
+  ]
+ },
+ {
+  "variant": "no-proxy (clean acc.)",
+  "target": "caltech",
+  "tag": "ref_fl_r10-20_sh_eps0.3_b20.0_auto5_mspec20_warm_kb_h8888",
+  "orig": 98.10426540284361,
+  "retrain": 27.488151658767773,
+  "hold": 25.355450236966824,
+  "sec": 0.0,
+  "epochs": 0,
+  "reached": null,
+  "rho_acc": 0.9666666666666667,
+  "n": 9,
+  "agree_acc": [
+   6,
+   7
+  ],
+  "rho_cka": 0.9666666666666667,
+  "agree_cka": [
+   7,
+   7
+  ]
+ },
+ {
+  "variant": "no-proxy (clean acc.)",
+  "target": "dslr",
+  "tag": "ref_fl_r10-20_sh_eps0.1_b20.0_auto5_mspec20_h8888",
+  "orig": 80.3921568627451,
+  "retrain": 58.8235294117647,
+  "hold": 50.98039215686274,
+  "sec": 0.0,
+  "epochs": 0,
+  "reached": null,
+  "rho_acc": 0.8627324588218471,
+  "n": 9,
+  "agree_acc": [
+   7,
+   7
+  ],
+  "rho_cka": 0.34454998079456733,
+  "agree_cka": [
+   5,
+   7
+  ]
+ },
+ {
+  "variant": "no-proxy (clean acc.)",
+  "target": "webcam",
+  "tag": "ref_fl_r10-20_sh_eps0.1_b20.0_auto5_mspec20_h8888",
+  "orig": 86.27450980392157,
+  "retrain": 52.94117647058823,
+  "hold": 55.88235294117647,
+  "sec": 0.0,
+  "epochs": 0,
+  "reached": null,
+  "rho_acc": 0.6050633809075329,
+  "n": 9,
+  "agree_acc": [
+   7,
+   7
+  ],
+  "rho_cka": 0.6666666666666667,
+  "agree_cka": [
+   6,
+   7
+  ]
+ }
+]

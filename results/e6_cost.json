@@ -1,0 +1,93 @@
+{
+ "unit": "GPU seconds",
+ "notes": [
+  "Ours: reference models (seed 7777 snapshots + held-out seed 8888) + proxy training until the original model reaches 95% (all stages of a continued training; scripts/e6_cost.py).",
+  "VeriFi: marking round (vFM / vEM). Backdoor: values reported in the paper (proportion 0.5, H800 GPUs).",
+  "Hardware: Digits and DomainNet on an RTX 5090, Office on an RTX 3090 except the last proxy stage of Amazon (RTX 5090); for Infograph, the reference models and the first proxy stage ran on a GPU shared with other jobs."
+ ],
+ "targets": [
+  {
+   "target": "MNIST-M",
+   "dataset": "digits",
+   "ours_reference_models": 2017,
+   "ours_proxy_stages": [
+    227
+   ],
+   "ours_proxy": 227,
+   "ours_total": 2244,
+   "verifi_vfm": 59,
+   "verifi_vem": 146,
+   "backdoor": 4920.0
+  },
+  {
+   "target": "SVHN",
+   "dataset": "digits",
+   "ours_reference_models": 3533,
+   "ours_proxy_stages": [
+    1475
+   ],
+   "ours_proxy": 1475,
+   "ours_total": 5008,
+   "verifi_vfm": 42,
+   "verifi_vem": 153,
+   "backdoor": 4472.7
+  },
+  {
+   "target": "Amazon",
+   "dataset": "office",
+   "ours_reference_models": 2569,
+   "ours_proxy_stages": [
+    17561,
+    8844
+   ],
+   "ours_proxy": 26405,
+   "ours_total": 28974,
+   "verifi_vfm": 107,
+   "verifi_vem": 256,
+   "backdoor": 5474.8
+  },
+  {
+   "target": "Caltech",
+   "dataset": "office",
+   "ours_reference_models": 2337,
+   "ours_proxy_stages": [
+    1004,
+    20870,
+    6252
+   ],
+   "ours_proxy": 28126,
+   "ours_total": 30463,
+   "verifi_vfm": 95,
+   "verifi_vem": 297,
+   "backdoor": 7756.0
+  },
+  {
+   "target": "Clipart",
+   "dataset": "domainnet",
+   "ours_reference_models": 4023,
+   "ours_proxy_stages": [
+    19851,
+    15878
+   ],
+   "ours_proxy": 35729,
+   "ours_total": 39752,
+   "verifi_vfm": 130,
+   "verifi_vem": 313,
+   "backdoor": 36115.6
+  },
+  {
+   "target": "Infograph",
+   "dataset": "domainnet",
+   "ours_reference_models": 11545,
+   "ours_proxy_stages": [
+    45490,
+    10598
+   ],
+   "ours_proxy": 56088,
+   "ours_total": 67633,
+   "verifi_vfm": 353,
+   "verifi_vem": 842,
+   "backdoor": 17197.9
+  }
+ ]
+}

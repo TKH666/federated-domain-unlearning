@@ -1,0 +1,318 @@
+{
+  "target": "MNIST",
+  "args": {
+    "dataset": "digits",
+    "backbone": "fpl",
+    "seed": 2024,
+    "rounds": 50,
+    "local_ep": 10,
+    "lr": 0.01,
+    "momentum": 0.9,
+    "local_bs": 64,
+    "percent": 1.0,
+    "infonce_t": 0.02,
+    "num_workers": 4,
+    "gpu": 0,
+    "tag": "",
+    "target": "MNIST",
+    "eps": 0.3,
+    "ref": "fl",
+    "objective": "flip",
+    "orig_keep": 90.0,
+    "beta": 20.0,
+    "ref_ep": 20,
+    "ref_rounds": "20",
+    "ref_seed": "7777",
+    "ref_init": "shared",
+    "ref_max": 5.0,
+    "lam": 0.5,
+    "select": "top",
+    "anchor": 9,
+    "threshold": 95.0,
+    "epochs_per_chunk": 20,
+    "max_chunks": 30,
+    "holdout_seed": "8888",
+    "hold_max": 5.0,
+    "seed_pool": "1111,2222,3333,4444,5555",
+    "proxy_bs": 0,
+    "n_proxy": 1,
+    "proxy_refs": "all",
+    "vtag": "h8888",
+    "spec_beta": 20.0,
+    "init_proxy": "",
+    "keep_best": false,
+    "eval_bs": 64,
+    "score_only": true,
+    "extra_null": ""
+  },
+  "cfg": {
+    "dataset": "digits",
+    "backbone": "fpl",
+    "seed": 2024,
+    "rounds": 50,
+    "local_ep": 10,
+    "lr": 0.01,
+    "momentum": 0.9,
+    "local_bs": 64,
+    "percent": 1.0,
+    "infonce_t": 0.02,
+    "num_workers": 4,
+    "gpu": 0,
+    "tag": "",
+    "device": "cuda:0"
+  },
+  "proxy_meta": {
+    "proxy_train_sec": 1.002444924786687,
+    "proxy_epochs": null,
+    "proxy_hist": null,
+    "n_rep": 3719,
+    "auto": [],
+    "n_proxy": 1,
+    "proxy_refs": "all",
+    "score_only": true
+  },
+  "scores": {
+    "Orig": {
+      "rep": {
+        "marker": 94.35483870967742,
+        "clean_anchor": 0.0,
+        "clean_acc": 100.0,
+        "n": 3348,
+        "pert_acc": 5.256869772998805,
+        "xdom": {
+          "SVHN": 0.0,
+          "USPS": 0.0,
+          "SynthDigits": 0.0,
+          "MNIST-M": 0.0
+        }
+      },
+      "test": {
+        "marker": 84.90640862944163,
+        "clean_anchor": 0.16656091370558376,
+        "clean_acc": 99.00856598984771,
+        "n": 12608,
+        "pert_acc": 13.507296954314722
+      }
+    },
+    "cp": {
+      "rep": {
+        "marker": 5.316606929510155,
+        "clean_anchor": 0.6571087216248507,
+        "clean_acc": 96.98327359617682,
+        "n": 3348,
+        "pert_acc": 88.56033452807647,
+        "xdom": {
+          "SVHN": 0.0,
+          "USPS": 0.0,
+          "SynthDigits": 0.0,
+          "MNIST-M": 0.0
+        }
+      },
+      "test": {
+        "marker": 5.298223350253807,
+        "clean_anchor": 0.4838197969543147,
+        "clean_acc": 97.41434010152284,
+        "n": 12608,
+        "pert_acc": 89.13388324873097
+      }
+    },
+    "fe_recal": {
+      "rep": {
+        "marker": 34.91636798088411,
+        "clean_anchor": 0.38829151732377537,
+        "clean_acc": 96.86379928315412,
+        "n": 3348,
+        "pert_acc": 49.46236559139785,
+        "xdom": {
+          "SVHN": 0.0,
+          "USPS": 0.0,
+          "SynthDigits": 0.0,
+          "MNIST-M": 0.0
+        }
+      },
+      "test": {
+        "marker": 34.47017766497462,
+        "clean_anchor": 0.2776015228426396,
+        "clean_acc": 97.67607868020305,
+        "n": 12608,
+        "pert_acc": 51.52284263959391
+      }
+    },
+    "fedosd_lr0.4": {
+      "rep": {
+        "marker": 93.36917562724014,
+        "clean_anchor": 0.0,
+        "clean_acc": 100.0,
+        "n": 3348,
+        "pert_acc": 6.3022700119474315,
+        "xdom": {
+          "SVHN": 0.0,
+          "USPS": 0.0,
+          "SynthDigits": 0.0,
+          "MNIST-M": 0.0
+        }
+      },
+      "test": {
+        "marker": 84.29568527918782,
+        "clean_anchor": 0.15862944162436549,
+        "clean_acc": 99.00856598984771,
+        "n": 12608,
+        "pert_acc": 14.006979695431472
+      }
+    },
+    "fedunran_lr1e-3": {
+      "rep": {
+        "marker": 48.95459976105138,
+        "clean_anchor": 0.41816009557945044,
+        "clean_acc": 97.46117084826763,
+        "n": 3348,
+        "pert_acc": 32.85543608124253,
+        "xdom": {
+          "SVHN": 0.0,
+          "USPS": 0.0,
+          "SynthDigits": 0.0,
+          "MNIST-M": 0.0
+        }
+      },
+      "test": {
+        "marker": 46.20875634517766,
+        "clean_anchor": 0.7138324873096447,
+        "clean_acc": 97.00983502538071,
+        "n": 12608,
+        "pert_acc": 35.17607868020305
+      }
+    },
+    "not": {
+      "rep": {
+        "marker": 14.934289127837514,
+        "clean_anchor": 0.2986857825567503,
+        "clean_acc": 97.90919952210275,
+        "n": 3348,
+        "pert_acc": 74.79091995221027,
+        "xdom": {
+          "SVHN": 0.0,
+          "USPS": 0.0,
+          "SynthDigits": 0.0,
+          "MNIST-M": 0.5714285714285714
+        }
+      },
+      "test": {
+        "marker": 14.42734771573604,
+        "clean_anchor": 0.42036802030456855,
+        "clean_acc": 97.93781725888324,
+        "n": 12608,
+        "pert_acc": 75.86453045685279
+      }
+    },
+    "pga": {
+      "rep": {
+        "marker": 87.93309438470729,
+        "clean_anchor": 0.02986857825567503,
+        "clean_acc": 99.22341696535246,
+        "n": 3348,
+        "pert_acc": 9.19952210274791,
+        "xdom": {
+          "SVHN": 0.0,
+          "USPS": 0.0,
+          "SynthDigits": 0.0,
+          "MNIST-M": 0.0
+        }
+      },
+      "test": {
+        "marker": 84.18464467005076,
+        "clean_anchor": 0.23794416243654823,
+        "clean_acc": 98.05678934010152,
+        "n": 12608,
+        "pert_acc": 12.515862944162437
+      }
+    },
+    "retrain": {
+      "rep": {
+        "marker": 2.927120669056153,
+        "clean_anchor": 0.38829151732377537,
+        "clean_acc": 96.8936678614098,
+        "n": 3348,
+        "pert_acc": 74.10394265232975,
+        "xdom": {
+          "SVHN": 0.0,
+          "USPS": 0.0,
+          "SynthDigits": 0.0,
+          "MNIST-M": 0.0
+        }
+      },
+      "test": {
+        "marker": 3.0218908629441623,
+        "clean_anchor": 0.3489847715736041,
+        "clean_acc": 97.43020304568527,
+        "n": 12608,
+        "pert_acc": 74.58756345177665
+      }
+    },
+    "rr": {
+      "rep": {
+        "marker": 2.4193548387096775,
+        "clean_anchor": 0.38829151732377537,
+        "clean_acc": 96.83393070489845,
+        "n": 3348,
+        "pert_acc": 90.94982078853046,
+        "xdom": {
+          "SVHN": 0.0,
+          "USPS": 0.0,
+          "SynthDigits": 0.0,
+          "MNIST-M": 0.0
+        }
+      },
+      "test": {
+        "marker": 2.66497461928934,
+        "clean_anchor": 0.38864213197969544,
+        "clean_acc": 97.2239847715736,
+        "n": 12608,
+        "pert_acc": 91.49746192893402
+      }
+    },
+    "ref0": {
+      "rep": {
+        "marker": 0.0,
+        "clean_anchor": 0.5077658303464755,
+        "clean_acc": 96.6547192353644,
+        "n": 3348,
+        "pert_acc": 84.97610513739546,
+        "xdom": {
+          "SVHN": 0.0,
+          "USPS": 0.0,
+          "SynthDigits": 0.0,
+          "MNIST-M": 0.0
+        }
+      },
+      "test": {
+        "marker": 0.1506979695431472,
+        "clean_anchor": 0.4362309644670051,
+        "clean_acc": 97.42227157360406,
+        "n": 12608,
+        "pert_acc": 87.43654822335026
+      }
+    },
+    "hold0": {
+      "rep": {
+        "marker": 2.3894862604540026,
+        "clean_anchor": 0.26881720430107525,
+        "clean_acc": 97.04301075268818,
+        "n": 3348,
+        "pert_acc": 87.39545997610514,
+        "xdom": {
+          "SVHN": 0.0,
+          "USPS": 0.0,
+          "SynthDigits": 0.0,
+          "MNIST-M": 0.0
+        }
+      },
+      "test": {
+        "marker": 2.5063451776649748,
+        "clean_anchor": 0.35691624365482233,
+        "clean_acc": 97.54917512690355,
+        "n": 12608,
+        "pert_acc": 88.81662436548223
+      }
+    }
+  }
+}
