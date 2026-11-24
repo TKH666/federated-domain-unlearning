@@ -49,10 +49,16 @@ def main():
     ap.add_argument("--data", required=True)
     ap.add_argument("--out", required=True)
     ap.add_argument("--threshold", type=float, default=95.0)
+    ap.add_argument("--layout", choices=["row", "grid"], default="row", help="1x4 (row) or 2x2 (grid) panels")
     a = ap.parse_args()
+    row = a.layout == "row"
     plt.rcParams.update({"font.size": 8, "axes.edgecolor": MUTED, "axes.labelcolor": INK, "xtick.color": INK,
                          "ytick.color": INK, "pdf.fonttype": 42})
-    fig, axes = plt.subplots(2, 2, figsize=(7.16, 3.3), sharey=True)
+    if row:
+        fig, axes = plt.subplots(1, 4, figsize=(7.16, 1.9), sharey=True)
+        axes = axes.reshape(2, 2)  # panel (r, c) -> axes[r, c], drawn left to right as (a)-(d)
+    else:
+        fig, axes = plt.subplots(2, 2, figsize=(7.16, 3.3), sharey=True)
     rows = []
     for r, target in enumerate(["SVHN", "MNIST-M"]):
         for c, panel in enumerate(["eps", "lam"]):
@@ -73,19 +79,24 @@ def main():
                 rows.append({"target": target, "panel": panel, "value": v, "reached": reached,
                              **{lbl: round(y, 2) for (_, lbl), y in zip(MODELS, ys)}})
             ax.set_xticks(range(len(MODELS)))
-            ax.set_xticklabels([lbl for _, lbl in MODELS])
+            if row:
+                ax.set_xticklabels([lbl for _, lbl in MODELS], rotation=45, ha="right", rotation_mode="anchor",
+                                   fontsize=6.5)
+            else:
+                ax.set_xticklabels([lbl for _, lbl in MODELS])
             ax.set_ylim(-4, 104)
             ax.grid(axis="y", color=GRID, linewidth=0.6)
             ax.set_axisbelow(True)
             for s in ("top", "right"):
                 ax.spines[s].set_visible(False)
-            if c == 0:
+            if (row and r == 0 and c == 0) or (not row and c == 0):
                 ax.set_ylabel("Verification acc. (%)")
             ax.set_title(f"({'abcd'[2 * r + c]}) {target}, " + ("$\\epsilon$" if panel == "eps" else "$\\lambda$"),
                          fontsize=8, color=INK)
             # the region above Held-out..FE is empty in every panel (scores <= 20%): place the legend there
-            ax.legend(frameon=False, fontsize=7, loc="upper center", bbox_to_anchor=(0.45, 1.0), handlelength=2.2)
-    fig.tight_layout(pad=0.4, h_pad=0.8, w_pad=1.0)
+            ax.legend(frameon=False, fontsize=6 if row else 7, loc="upper center", bbox_to_anchor=(0.41 if row else 0.45, 1.0),
+                      handlelength=1.8 if row else 2.2, labelspacing=0.25 if row else 0.5)
+    fig.tight_layout(pad=0.3, w_pad=0.6) if row else fig.tight_layout(pad=0.4, h_pad=0.8, w_pad=1.0)
     os.makedirs(os.path.dirname(os.path.abspath(a.out)), exist_ok=True)
     fig.savefig(a.out, bbox_inches="tight")
     fig.savefig(os.path.splitext(a.out)[0] + ".png", dpi=200, bbox_inches="tight")
